@@ -1,0 +1,40 @@
+// Line 5 - 6
+* First thing to be noted here in this code is the usage of var. var always refer the same value wherver 
+it is refered in the class or function. so instead of using var we can use const here. 
+
+// Line 8 - 15
+* Second thing instead of using fetch to make the api call. We can use axios, this in turn reduce 
+the burden intercepting the request details.
+
+* A log statement has been in order to check the output, but that was not removed. 
+It should be removed from the code.
+
+// Line 17 - 21
+
+By default we have already set the value of alerttext to processing. it is not needed to check it again.
+Also 'else if' was breaken down into two line which affects the readability of the code. we can modify the same 
+in the following way.
+
+Fuel consumed should be greater than 10000 to show the alert message
+
+Code snippet:
+
+    (fuel && ( fuel.litres > 10000 && setAlertText('Need to buy more fuel') ) || setAlertText('All is fine') );
+
+
+//Line 24
+// we can avoid styling the component by inline styling. Also we are using a conditional check it affects the readability of code.
+we can rewrite the same by.
+
+<h1 className={getClassName()}>{alertText}</div>
+
+function getClassName() {
+    return alertText === 'Need to buy more fuel' && 'error'
+}
+
+inside styling:
+
+.error {
+    color: 'red';
+}
+
